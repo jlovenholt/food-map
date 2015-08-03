@@ -7,11 +7,10 @@ import 'dart:html' hide Animation, Point;
 
 import 'package:google_maps/google_maps.dart';
 import 'package:google_maps/google_maps_places.dart';
-
 import 'package:js_wrapping/js_wrapping.dart';
 
-import 'package:food_map/maps/map_vars.dart';
-import 'package:food_map/map_data.dart';
+import 'map_vars.dart';
+import 'map_data.dart';
 
 GMap map;
 final markers = <Marker>[];
@@ -55,13 +54,13 @@ void handleNoGeolocation(bool errorFlag) {
     content = 'browser doesn\'t support geolocation.';
   }
 
+
   //points
   for (final loc in restaurants) {
     final locMarker = new Marker(new MarkerOptions()
       ..position = new LatLng(loc.lat, loc.lng)
       ..map = map
-      ..icon = blueImg
-      ..shape = shape
+      ..icon = medImg
       ..animation = Animation.DROP
       ..title = loc.name);
 
@@ -75,20 +74,16 @@ void handleNoGeolocation(bool errorFlag) {
     markers.add(new Marker(new MarkerOptions()
       ..position = new LatLng(bld.lat, bld.lng)
       ..map = map
-      ..icon = medImg
-      ..shape = shape
+      ..icon = restImg
       ..animation = Animation.DROP
       ..title = bld.name
+      ..clickable = false
       ..zIndex = 1));
   }
 
   final options = new InfoWindowOptions()
     ..position = new LatLng(44.9106355, -93.503853)
     ..content = content;
-
-//  final infowindow = new InfoWindow(options);
-//  // FIXME https://code.google.com/p/gmaps-api-issues/issues/detail?id=7908
-//  infowindow.open(map);
 
   map.center = options.position;
 }

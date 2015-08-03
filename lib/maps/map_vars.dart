@@ -1,49 +1,21 @@
 import 'package:google_maps/google_maps.dart';
 
-//look at styles/images/TEMP_image_outline.png to see the poly
-final shape = new MarkerShape()
-  ..coords = [9, 31, 0, 14, 0, 6, 6, 0, 15, 0, 21, 6, 21, 14, 12, 31]
-  ..type = 'poly';
+final IMG_URL = "https://maps.google.com/mapfiles/kml/paddle";
 
 final medImg = new Icon()
-  ..url = 'styles/images/icon_meditech.png'
+  ..url = '${IMG_URL}/grn-blank.png'
   // This marker is 22 pixels wide by 32 pixels tall.
-  ..scaledSize = new Size(22, 32)
-  // The origin for this image is top-left
-  // The anchor for this image is bottom-middle
-  ..anchor = new Point(11, 32);
+  ..scaledSize = new Size(32, 32);
 
-final blueImg = new Icon()
-  ..url = 'styles/images/icon_blue.png'
-  // This marker is 22 pixels wide by 32 pixels tall.
-  ..scaledSize = new Size(22, 32)
-  // The origin for this image is top-left
-  // The anchor for this image is bottom-middle
-  ..anchor = new Point(11, 32);
+final restImg = new Icon()
+  ..url = '${IMG_URL}/orange-stars.png'
+// This marker is 22 pixels wide by 32 pixels tall.
+  ..scaledSize = new Size(32, 32);
 
-final redImg = new Icon()
-  ..url = 'styles/images/icon_red.png'
-  // This marker is 22 pixels wide by 32 pixels tall.
-  ..scaledSize = new Size(22, 32)
-  // The origin for this image is top-left
-  // The anchor for this image is bottom-middle
-  ..anchor = new Point(11, 32);
+final srchImg = new Icon()
+  ..url = '${IMG_URL}/red-circle.png'
+  ..scaledSize = new Size(32, 32);
 
-final prplImg = new Icon()
-  ..url = 'styles/images/icon_purple.png'
-  // This marker is 22 pixels wide by 32 pixels tall.
-  ..scaledSize = new Size(22, 32)
-  // The origin for this image is top-left
-  // The anchor for this image is bottom-middle
-  ..anchor = new Point(11, 32);
-
-final orngImg = new Icon()
-  ..url = 'styles/images/icon_orange.png'
-  // This marker is 22 pixels wide by 32 pixels tall.
-  ..scaledSize = new Size(22, 32)
-  // The origin for this image is top-left
-  // The anchor for this image is bottom-middle
-  ..anchor = new Point(11, 32);
 
 final retroMapStyle = <MapTypeStyle>[
   new MapTypeStyle()

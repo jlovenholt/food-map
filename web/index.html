@@ -32,6 +32,10 @@
       </button>
       <h1 class="title">Meditech Foodie</h1>
       <section class="app-bar-actions">
+      <button class="add-btn">
+        <i class="icon icon-plus icon-2x"></i>
+      </button>
+
         <!-- Put App Bar Buttons Here -->
         <!-- e.g <button><i class="icon icon-star"></i></button> -->
       </section>
@@ -51,23 +55,30 @@
 
   <main> <!-- Map -->
   <div id="map">
-    <div id="map-canvas">loading...</div>
+    <div id="map-canvas">
+      <div class="loading">loading...</div>
+    </div>
   </div>
 
   <!-- ADD -->
-  <div id="add" style="display: none">ADD</div>
+  <div id="add" style="display: none">
+    <div class="loading">loading...</div>
+  </div>
 
   <!-- SETTINGS -->
-  <div id="settings" style="display: none">SETTINGS</div>
+  <div id="settings" style="display: none">
+    <div class="loading">loading...</div>
+  </div>
 
   <!-- ABOUT -->
   <div id="about" style="display: none">
+    <div class="loading">loading...</div>
     <p>This is an awesome app created by Jens Loven-Holt, that
       currently has NO features. The end goal is more or less create
       yelp for Meditech.</p>
   </div>
   </main>
-  <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+  <script src="http://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
   <script async type="application/dart" src="main.dart"></script>
   <script async src="packages/browser/dart.js"></script>
 </body>
