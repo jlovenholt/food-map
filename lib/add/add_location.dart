@@ -14,8 +14,6 @@ List<Marker> searchMarkers = <Marker>[];
 
 initAddLoc() {
   var addBtn = querySelector('.add-btn');
-
-
   addBtn.onClick.listen(searchByRadius);
 }
 
@@ -27,7 +25,7 @@ searchByRadius(e) {
   ///Search for new markers
   final request = new PlaceSearchRequest()
     ..location = map.center
-    ..radius = 1000
+    ..bounds = map.bounds
     ..types = ['restaurant'];
 
   infowindow = new InfoWindow();
@@ -50,8 +48,7 @@ void createMarker(PlaceResult place) {
     ..position = place.geometry.location);
   searchMarkers.add(marker);
 
-  addToRestaurants(e){
-    print(marker.position);
+  addToRestaurants(e) {
   }
 
   marker.onClick.listen((e) {
@@ -61,4 +58,3 @@ void createMarker(PlaceResult place) {
     addInfoBtn.onClick.listen(addToRestaurants);
   });
 }
-
