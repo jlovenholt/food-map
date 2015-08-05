@@ -6,8 +6,8 @@ library food_map;
 import 'dart:html';
 
 import 'package:food_map/nav_menu.dart';
-import 'package:food_map/maps/map_initialization.dart';
-import 'package:food_map/add/add_location.dart';
+import 'package:food_map/maps/initialization.dart';
+import 'package:food_map/maps/restaurant_search.dart';
 import 'package:route_hierarchical/client.dart';
 
 void main() {

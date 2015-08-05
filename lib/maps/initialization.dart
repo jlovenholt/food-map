@@ -4,15 +4,15 @@
 library map_init;
 
 import 'dart:html' hide Animation, Point;
+import 'dart:convert';
 
 import 'package:google_maps/google_maps.dart';
-
-import 'package:food_map/maps/map_vars.dart';
-import 'package:food_map/maps/map_data.dart';
+import 'package:food_map/maps/ui_variables.dart';
+import 'package:food_map/maps/data_classes.dart';
+import 'package:food_map/maps/add_markers.dart';
 
 GMap map;
 final markers = <Marker>[];
-InfoWindow infowindow;
 
 void initMapBuilder() {
   infowindow = new InfoWindow();
@@ -37,14 +37,26 @@ void initMapBuilder() {
   });
 }
 
-//getLatLng(var zipReturn) {
-//  HttpRequest.getString('http://maps.googleapis.com/maps/api/geocode/json?address=${zipReturn}').then((zipJson) {
-//    var data = JSON.decode(zipJson);
-//    if ("OK" == data["status"]) {
-//      return new LatLng(data['results'][0]['geometry']['location']['lat'],
-//      data['results'][0]['geometry']['location']['lng']);
-//    } else {
-//      return new LatLng(44.9106355, -93.503853);
-//    }
-//  });
-//}
+List<Building> buildings = [];
+List<Restaurant> restaurants = [];
+
+importData() {
+  HttpRequest.getString('data.json').then((response) {
+    Map data = JSON.decode(response);
+
+    if (data.containsKey("meditech")) {
+      for (Map bldng in data["meditech"]) {
+        Building building = new Building.fromJsonMap(bldng);
+        buildings.add(building);
+        addMedBuilding(building);
+      }
+    }
+    if (data.containsKey("restaurants")) {
+      for (Map food in data["restaurants"]) {
+        Restaurant restaurant = new Restaurant.fromJsonMap(food);
+        restaurants.add(restaurant);
+        addRestaurant(restaurant);
+      }
+    }
+  });
+}

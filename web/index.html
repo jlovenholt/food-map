@@ -16,6 +16,12 @@
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/normalize.css">
   <script src="https://use.fonticons.com/6be37c48.js"></script>
+  <!--icon-map            icon-info           icon-cog -->
+  <!--icon-floppy-o       icon-star           icon-external-link-square-->
+  <!--icon-plus-square    icon-check-square   icon-square -->
+  <!--icon-github-square  icon-plus           icon-envelope-square -->
+  <!--icon-search         icon-filter         icon-toggle-on -->
+  <!--icon-toggle-off     icon-bars-->
 
 </head>
 
@@ -26,12 +32,14 @@
     <button class="menu">
       <i class="icon icon-bars icon-2x"></i>
     </button>
-    <h1 class="title">Meditech Foodie</h1>
+    <h1 class="title"></h1>
     <section class="app-bar-actions">
       <button class="add-btn">
         <i class="icon icon-search icon-2x"></i>
       </button>
-      <button><i class="icon icon-plus-square"></i></button>
+      <button class="add-btn">
+        <i class="icon icon-floppy-o icon-2x"></i>
+      </button>
     </section>
   </div>
 </header>
@@ -39,10 +47,9 @@
 <nav class="navdrawer-container promote-layer">
   <h4>Navigation</h4>
   <ul>
-    <li><a href="/">Map</a></li>
-    <li><a href="/add">Add</a></li>
-    <li><a href="/settings">Settings</a></li>
-    <li><a href="/about">About</a></li>
+    <li><a href="/"><i class="icon icon-floppy-o icon-fw"></i>  Map</a></li>
+    <li><a href="/settings"><i class="icon icon-floppy-o icon-fw"></i>  Settings</a></li>
+    <li><a href="/about"><i class="icon icon-floppy-o icon-fw"></i>About</a></li>
   </ul>
 </nav>
 
@@ -53,11 +60,6 @@
       <div>loading...</div>
     </div>
   </div>
-
-  <!--&lt;!&ndash; ADD &ndash;&gt;-->
-  <!--<div id="add" class="pages" style="display: none">-->
-    <!--<div>loading...</div>-->
-  <!--</div>-->
 
   <!-- SETTINGS -->
   <div id="settings" class="pages" style="display: none">
@@ -73,7 +75,7 @@
 
     <div>
       <a href="https://github.com/jlovenholt/food-map" target="_blank">
-        <i class="icon icon-github"></i>
+        <i class="icon icon-github-square"></i>
       </a>
     </div>
   </div>
