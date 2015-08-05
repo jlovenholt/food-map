@@ -237,13 +237,16 @@ body.open {
 
 main {
 	margin: 0 auto;
-	padding: 4rem 0 0 0;
+	padding: 0;
 	min-height: 100%
 }
 
-#map, #map-canvas {
-  height: 30rem;
-  width: 100%;
+#map-canvas {
+	position: absolute;
+	top: 6rem;
+	bottom: 0;
+	left: 0;
+	right: 0;
 }
 
 @media all and (min-width: 800px) {
@@ -257,7 +260,7 @@ main {
 	.app-bar-container {
 		display: block;
 		height: 6rem;
-		max-width: 54rem;
+		max-width: 70rem;
 		padding: 0 1rem;
 		box-sizing: border-box;
 		background-color: #4285f4
@@ -300,7 +303,7 @@ main {
 		display: -webkit-flex;
 		display: -ms-flexbox;
 		display: flex;
-		max-width: 54rem;
+		max-width: 70rem;
 		margin: 0 auto;
 		-webkit-flex-direction: row;
 		-ms-flex-direction: row;
@@ -310,11 +313,17 @@ main {
 		border: none
 	}
 	main {
-		max-width: 54rem;
-		padding-top: 150;
+		max-width: 70rem;
 		min-height: initial
 	}
+
+	#map-canvas {
+		top: 9rem;
+    max-width: 100rem;
+		margin: auto;
+	}
+
 	body {
-		overflow-y: scroll
+		overflow-y: auto
 	}
 }
