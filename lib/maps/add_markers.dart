@@ -90,7 +90,7 @@ String buildInfoReviews(Restaurant rest) {
 
 /////////////////////////////////////////////////
 
-openInfoWindow(content, marker) {
+openInfoWindow(String content,Marker marker) {
   if (infowindow != null) {
     infowindow.close();
   }

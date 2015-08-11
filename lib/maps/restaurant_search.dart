@@ -35,7 +35,6 @@ searchByRadius(e) {
     ..bounds = map.bounds
     ..types = ['restaurant'];
 
-  infowindow = new InfoWindow();
   final service = new PlacesService(map);
   service.nearbySearch(request, callback);
 }
