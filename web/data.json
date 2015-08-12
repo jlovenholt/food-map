@@ -69,10 +69,11 @@
   ],
   "restaurants": [
     {
-      "id": "gdngt",
-      "name": "Gold Nugget Tavern & Grille",
-      "lat": 44.904132,
-      "lng": -93.4676296,
+      "id": "IkesMinnetonka",
+      "name": "Ike's Minnetonka",
+      "lat": 44.912069,
+      "lng": -93.50600099999997,
+      "website": "http://www.restaurantsminnetonkamn.com/",
       "reviews": [
         {
           "val": 3,
@@ -89,10 +90,11 @@
       ]
     },
     {
-      "id": "ptbly",
-      "name": "Potbelly Sandwich Shop",
-      "lat": 44.9159904,
-      "lng": -93.5028079,
+      "id": "GiacomosRestaurant",
+      "name": "Giacomo's Restaurant",
+      "lat": 42.364596,
+      "lng": -71.05344300000002,
+      "website": "http://giacomosblog-boston.blogspot.com/",
       "reviews": [
         {
           "val": 3,
@@ -100,7 +102,7 @@
         },
         {
           "val": 4,
-          "cmt": "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW"
+          "cmt": "WWWWWWWWWW WWWWWWWWWWWWWWWW WWWWWWWWWWWWWWWWWWWW WWWWWW"
         },
         {
           "val": 3,

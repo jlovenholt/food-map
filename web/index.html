@@ -7,68 +7,81 @@
 
 <html>
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Food Map</title>
-<link rel="icon" type="image/png" href="styles/images/favicon.png">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Map</title>
+  <link rel="icon" type="image/png" href="styles/images/favicon.png">
 
-<!-- TODO: Swap the two stylesheet references in order to use Sass (and
-       uncomment the sass transformer in the pubspec.yaml file. -->
-<link rel="stylesheet" href="styles/main.css">
-<link rel="stylesheet" href="styles/normalize.css">
-<script src="https://use.fonticons.com/6be37c48.js"></script>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/normalize.css">
+  <script src="https://use.fonticons.com/6be37c48.js"></script>
+  <!--icon-map            icon-info           icon-cog -->
+  <!--icon-floppy-o       icon-star           icon-external-link-square-->
+  <!--icon-plus-square    icon-check-square   icon-square -->
+  <!--icon-github-square  icon-plus           icon-envelope-square -->
+  <!--icon-search         icon-filter         icon-toggle-on -->
+  <!--icon-toggle-off     icon-bars-->
 
 </head>
 
 <body>
 
-  <!-- example content. remove if you use your own styles and widgets -->
-
-  <header class="app-bar promote-layer">
-    <div class="app-bar-container">
-      <button class="menu">
-        <i class="icon icon-bars icon-2x"></i>
+<header class="app-bar promote-layer">
+  <div class="app-bar-container">
+    <button class="menu">
+      <i class="icon icon-bars icon-2x"></i>
+    </button>
+    <h1 class="title">Meditech Food Map</h1>
+    <section class="app-bar-actions">
+      <button class="add-btn">
+        <i class="icon icon-search icon-2x"></i>
       </button>
-      <h1 class="title">Meditech Foodie</h1>
-      <section class="app-bar-actions">
-        <!-- Put App Bar Buttons Here -->
-        <!-- e.g <button><i class="icon icon-star"></i></button> -->
-      </section>
+      <button class="add-btn">
+        <i class="icon icon-floppy-o icon-2x"></i>
+      </button>
+    </section>
+  </div>
+</header>
+<div id="overlay" style="display: none"></div>
+<nav class="navdrawer-container promote-layer">
+  <h4>Navigation</h4>
+  <ul>
+    <li><a href="/"><i class="icon icon-floppy-o icon-fw"></i>  Map</a></li>
+    <li><a href="/settings"><i class="icon icon-floppy-o icon-fw"></i>  Settings</a></li>
+    <li><a href="/about"><i class="icon icon-floppy-o icon-fw"></i>About</a></li>
+  </ul>
+</nav>
+
+
+<main> <!-- Map -->
+  <div id="map" class="pages">
+    <div id="map-canvas">
+      <div>loading...</div>
     </div>
-  </header>
-
-  <nav class="navdrawer-container promote-layer">
-    <h4>Navigation</h4>
-    <ul>
-      <li><a href="/">Map</a></li>
-      <li><a href="/add">Add</a></li>
-      <li><a href="/settings">Settings</a></li>
-      <li><a href="/about">About</a></li>
-    </ul>
-  </nav>
-
-
-  <main> <!-- Map -->
-  <div id="map">
-    <div id="map-canvas">loading...</div>
   </div>
 
-  <!-- ADD -->
-  <div id="add" style="display: none">ADD</div>
-
   <!-- SETTINGS -->
-  <div id="settings" style="display: none">SETTINGS</div>
+  <div id="settings" class="pages" style="display: none">
+    <div>loading...</div>
+  </div>
 
   <!-- ABOUT -->
-  <div id="about" style="display: none">
+  <div id="about" class="pages" style="display: none">
+    <div>loading...</div>
     <p>This is an awesome app created by Jens Loven-Holt, that
       currently has NO features. The end goal is more or less create
       yelp for Meditech.</p>
+
+    <div>
+      <a href="https://github.com/jlovenholt/food-map" target="_blank">
+        <i class="icon icon-github-square"></i>
+      </a>
+    </div>
   </div>
-  </main>
-  <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-  <script async type="application/dart" src="main.dart"></script>
-  <script async src="packages/browser/dart.js"></script>
+</main>
+<script src="http://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
+<script async type="application/dart" src="main.dart"></script>
+<script async src="packages/browser/dart.js"></script>
 </body>
 </html>
